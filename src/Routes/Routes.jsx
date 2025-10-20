@@ -5,6 +5,7 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import Home from '../pages/Home/Home';
 import About from '../pages/About/About';
 import BookDetails from '../pages/BookDetails/BookDetails';
+import ReadList from '../pages/Home/ReadList/ReadList';
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         Component: About,
+      },
+      {
+        path: 'readList',
+        Component: ReadList,
       },
       {
         path: "/bookDetails/:id", // :id ata dyr karon dynamic route set korar jrno ekn http://localhost:5173/bookDetails/fd  mot kotha bookDetails er pot ja debo tatei oi bookDetails page ta asbe

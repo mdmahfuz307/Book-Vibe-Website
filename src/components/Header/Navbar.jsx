@@ -5,11 +5,14 @@ import { Link, Links } from 'react-router';
 const Navbar = () => {
     const links = (
       <>
-        <Link to='/'>
+        <Link to="/">
           <li className="m-2">Home</li>
         </Link>
-        <Link to='/about'>
+        <Link to="/about">
           <li className="m-2">About</li>
+        </Link>
+        <Link to="/readList">
+          <li className="m-2">ReadList</li>
         </Link>
       </>
     );
