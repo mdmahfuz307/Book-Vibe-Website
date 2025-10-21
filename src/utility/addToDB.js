@@ -1,4 +1,4 @@
-const getStoreBook = () => {
+const getStoredBook = () => {
 
     const storedBookSTR = localStorage.getItem('readList');
 
@@ -12,9 +12,9 @@ const getStoreBook = () => {
 
 }
 
-const addToStoreDB = (id) => {
+const addToStoredDB = (id) => {
 
-    const storedBookData = getStoreBook();
+    const storedBookData = getStoredBook();
 
     if(storedBookData.includes(id)){
         alert('Book already marked as read');
@@ -27,4 +27,4 @@ const addToStoreDB = (id) => {
 
 }
 
-export { addToStoreDB };
+export { addToStoredDB, getStoredBook };
