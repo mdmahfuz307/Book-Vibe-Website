@@ -1,38 +1,43 @@
 import { createBrowserRouter } from "react-router-dom";
-import About from "../pages/About/About";
-import BookDetails from "../pages/BookDetails/BookDetails";
-import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import Home from "../pages/Home/Home";
-import ReadList from "../pages/ReadList/ReadList";
-import Root from "../pages/Root/Root";
+import Root from "../pages/Root/Root.jsx";
+import Home from "../pages/Home/Home.jsx";
+import About from "../pages/About/About.jsx";
+import ReadList from "../pages/ReadList/ReadList.jsx";
+import BookDetails from "../pages/BookDetails/BookDetails.jsx";
+import ErrorPage from "../pages/ErrorPage/ErrorPage.jsx";
 
+// Loader to fetch books data from public folder
+const fetchBooksData = async () => {
+  const res = await fetch("/booksData.json"); // public/booksData.json
+  if (!res.ok) throw new Error("Failed to load books data");
+  return res.json();
+};
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
-    errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage />,
 
     children: [
       {
-        index: true,
-        path: "/",
+        index: true,       // Default route "/"
         Component: Home,
-  loader: () => fetch("/data/booksData.json"),
+        loader: fetchBooksData,
       },
       {
-        path: "/about",
+        path: "about",     // "/about"
         Component: About,
       },
       {
-        path: "readList",
-  loader: () => fetch("/data/booksData.json"),
+        path: "readList",  // "/readList"
         Component: ReadList,
+        loader: fetchBooksData,
       },
       {
-        path: "/bookDetails/:id",  // :id ata dyr karon dynamic route set korar jrno ekn http://localhost:5173/bookDetails/fd  mot kotha bookDetails er pot ja debo tatei oi bookDetails page ta asbe
-  loader: () => fetch("/data/booksData.json"),
+        path: "bookDetails/:id", // "/bookDetails/:id"
         Component: BookDetails,
+        loader: fetchBooksData,
       },
     ],
   },
