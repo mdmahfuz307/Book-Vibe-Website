@@ -1,4 +1,4 @@
- 📚 Book Vibe Website
+# 📚 Book Vibe Website
 
 A modern, interactive book discovery and reading platform built with React, Vite, and Tailwind CSS. Browse books, track your reading list, view detailed book information, and manage your personal library with an elegant, responsive interface.
 
