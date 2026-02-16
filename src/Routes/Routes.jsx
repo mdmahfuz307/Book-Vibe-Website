@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
         loader: fetchBooksData,
       },
       {
-        path: "about",     // "/about"
+        path: "/about",     // "/about"
         Component: About,
       },
       {
@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
         loader: fetchBooksData,
       },
       {
-        path: "bookDetails/:id", // "/bookDetails/:id"
+        path: "/bookDetails/:id", // "/bookDetails/:id"
         Component: BookDetails,
         loader: fetchBooksData,
       },

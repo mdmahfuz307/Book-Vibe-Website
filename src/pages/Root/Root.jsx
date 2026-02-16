@@ -1,14 +1,15 @@
-import React from 'react';
-import Navbar from '../../components/Header/Navbar';
 import { Outlet } from 'react-router';
 import Footer from '../../components/Footer/Footer';
+import Navbar from '../../components/Header/Navbar';
 
 const Root = () => {
     return (
-        <div className='max-w-7xl mx-auto'>
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Footer></Footer>
+        <div className='flex flex-col min-h-screen bg-white dark:bg-dark-bg text-gray-900 dark:text-gray-100'>
+            <Navbar />
+            <main className='flex-grow'>
+                <Outlet />
+            </main>
+            <Footer />
         </div>
     );
 };
